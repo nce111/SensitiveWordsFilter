@@ -16,8 +16,8 @@ Node::Node(string character)
 
 Node* Node::findChild(string& nextCharacter) const 
 {
-	_TrieMapIterator ___trieMapIt = __map.find(nextCharacter);
-	return (___trieMapIt == __map.end()) ? NULL : const_cast<Node*>(&(___trieMapIt->second));
+	map<string, Node>::const_iterator itr = __map.find(nextCharacter);
+	return (itr == __map.end()) ? NULL : const_cast<Node*>(&(itr->second));
 }
 
 Node* Node::insertChild(string& nextCharacter) 

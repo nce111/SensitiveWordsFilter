@@ -1,9 +1,9 @@
 #include "map"
+#include <string>
 using namespace std;
 class Trie;
+class Node;
 
-typedef map<string, Node> _TrieMap;
-typedef map<string, Node>::const_iterator _TrieMapIterator;
 
 /*
 1.每个TrieNode有一个map成员，其映射关系为一个string对应一个TrieNode
@@ -15,6 +15,9 @@ enum Encoding
 	UTF8 = 1,
 	UTF16 = 2
 };
+
+typedef map<string, Node> _TrieMap;
+typedef map<string, Node>::iterator _TrieMapIterator;
 
 class Node
 {
@@ -33,6 +36,8 @@ public:
 	Node* findChild(string& nextCharacter) const;
 	Node* insertChild(string& nextCharacter);
 };
+
+
 
 inline Node::Node(int dataSize)
 {

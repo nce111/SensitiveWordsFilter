@@ -93,13 +93,13 @@ string Trie::toString()
 	{
 		if (___isFirstChild) 
 		{
-			___result.append(toString(const_cast<Node*>(&(___it->second))));
+			___result.append(toString(&(___it->second)));
 			___isFirstChild = false;
 		} 
 		else 
 		{
 			___result.append(",");
-			___result.append(toString(const_cast<Node*>(&(___it->second))));
+			___result.append(toString((&(___it->second))));
 		}
 	}
 	___result.append("]");
@@ -116,13 +116,13 @@ string Trie::toString(Node* parent)
 	{
 		if (___isFirstChild) 
 		{
-			___result.append(toString(const_cast<Node*>(&(___it->second))));
+			___result.append(toString((&(___it->second))));
 			___isFirstChild = false;
 		} 
 		else 
 		{
 			___result.append(",");
-			___result.append(toString(const_cast<Node*>(&(___it->second))));
+			___result.append(toString((&(___it->second))));
 		}
 	}
 	___result.append("]");
@@ -140,7 +140,7 @@ string Trie::getKeywords()
 	return ___result;
 }
 
-string Trie::getKeywords(const std::string& character, const Node* parent) 
+string Trie::getKeywords(const std::string& character, Node* parent) 
 {
 	string ___result;
 	for (_TrieMapIterator ___it = parent->__map.begin();

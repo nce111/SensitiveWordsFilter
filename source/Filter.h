@@ -16,16 +16,15 @@ private:
 	static bool __initialized;
 	static Trie __trie;
 	static void load(const char* fileName, int startPos);
-	static bool censor(std::string& source);
+	static bool censor(string& source);
 public:
 	static bool __LEGAL;
 	static bool __ILLEGAL;
+	static void init(Level level, string loadFile = "");
+	static bool isInitialized();
+	static bool censor(const char* source, int length);
 };
 
-static void init(Level level,std::string loadFile = "");
-static bool isInitialized();
-static bool censor(const char* source, int length);
-};
 inline bool Filter::isInitialized() {
-return __initialized;
+	return __initialized;
 }

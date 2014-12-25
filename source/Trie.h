@@ -18,7 +18,7 @@ private:
 	Node* insertBranch(Node* parent, string& keyword);
 	Node* find(Node* parent, string& keyword);
 	string toString(Node* parent);
-	string getKeywords(const string& character, const Node* parent);
+	string getKeywords(const string& character, Node* parent);
 public:
 	int __size;
 	Trie(Encoding encoding);
